@@ -3,15 +3,18 @@ package com.example.courtcounter;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
+    int scoreTeamA = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        displayForTeamA(8);
+        //displayForTeamA(5);
     }
 
     /**
@@ -20,5 +23,29 @@ public class MainActivity extends AppCompatActivity {
     public void displayForTeamA(int score) {
         TextView scoreView = (TextView) findViewById(R.id.team_a_score);
         scoreView.setText(String.valueOf(score));
+    }
+
+    /**
+     * This method is called when the plusThreePoints button is clicked.
+     */
+    public void plusThreePointsTeamA(View view) {
+        scoreTeamA = scoreTeamA + 3;
+        displayForTeamA(scoreTeamA);
+    }
+
+    /**
+     * This method is called when the plusTwoPoints button is clicked.
+     */
+    public void plusTwoPointsTeamA(View view) {
+        scoreTeamA = scoreTeamA + 2;
+        displayForTeamA(scoreTeamA);
+    }
+
+    /**
+     * This method is called when the freeThrow button is clicked.
+     */
+    public void plusOnePointTeamA(View view) {
+        scoreTeamA = scoreTeamA + 1;
+        displayForTeamA(scoreTeamA);
     }
 }
