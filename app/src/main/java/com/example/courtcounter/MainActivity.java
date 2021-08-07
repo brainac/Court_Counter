@@ -9,6 +9,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     int scoreTeamA = 0;
+    int scoreTeamB = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,5 +48,37 @@ public class MainActivity extends AppCompatActivity {
     public void plusOnePointTeamA(View view) {
         scoreTeamA = scoreTeamA + 1;
         displayForTeamA(scoreTeamA);
+    }
+
+    /**
+     * Displays the given score for Team B.
+     */
+    public void displayForTeamB(int score) {
+        TextView scoreView = (TextView) findViewById(R.id.team_b_score);
+        scoreView.setText(String.valueOf(score));
+    }
+
+    /**
+     * This method is called when the plusThreePoints button is clicked.
+     */
+    public void plusThreePointsTeamB(View view) {
+        scoreTeamB = scoreTeamB + 3;
+        displayForTeamB(scoreTeamB);
+    }
+
+    /**
+     * This method is called when the plusTwoPoints button is clicked.
+     */
+    public void plusTwoPointsTeamB(View view) {
+        scoreTeamB = scoreTeamB + 2;
+        displayForTeamB(scoreTeamB);
+    }
+
+    /**
+     * This method is called when the freeThrow button is clicked.
+     */
+    public void plusOnePointTeamB(View view) {
+        scoreTeamB = scoreTeamB + 1;
+        displayForTeamB(scoreTeamB);
     }
 }
