@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="button_team_a">#FFBB86FC</color>
     <color name="button_team_b">#FFFF9800</color>
+    <color name="text_color">#616161</color>
 </resources>

@@ -81,4 +81,14 @@ public class MainActivity extends AppCompatActivity {
         scoreTeamB = scoreTeamB + 1;
         displayForTeamB(scoreTeamB);
     }
+
+    /**
+     * This method is called when the Reset button is clicked.
+     */
+    public void resetAllScores(View view) {
+        scoreTeamA = 0;
+        scoreTeamB = 0;
+        displayForTeamA(scoreTeamA);
+        displayForTeamB(scoreTeamB);
+    }
 }
