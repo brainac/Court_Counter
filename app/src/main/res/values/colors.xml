@@ -10,4 +10,6 @@
     <color name="button_team_a">#FFBB86FC</color>
     <color name="button_team_b">#FFFF9800</color>
     <color name="text_color">#616161</color>
+    <color name="yellow_card">#FFFFEB3B</color>
+    <color name="red_card">#FFF44336</color>
 </resources>
