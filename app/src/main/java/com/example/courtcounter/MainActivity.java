@@ -8,8 +8,12 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    int scoreTeamA = 0;
-    int scoreTeamB = 0;
+    int goalTeamA = 0;
+    int yellowCardTeamA = 0;
+    int redCardTeamA = 0;
+    int yellowCardTeamB = 0;
+    int redCardTeamB = 0;
+    int goalTeamB = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,76 +23,117 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Displays the given score for Team A.
+     * Displays goal score for Team A.
      */
-    public void displayForTeamA(int score) {
+    public void displayGoalForTeamA(int score) {
         TextView scoreView = (TextView) findViewById(R.id.team_a_score);
         scoreView.setText(String.valueOf(score));
     }
 
     /**
-     * This method is called when the plusThreePoints button is clicked.
+     * Displays yellow card score for Team A.
      */
-    public void plusThreePointsTeamA(View view) {
-        scoreTeamA = scoreTeamA + 3;
-        displayForTeamA(scoreTeamA);
+    public void displayYellowCardTeamA(int score) {
+        TextView scoreView = (TextView) findViewById(R.id.team_a_yellow_card_score);
+        scoreView.setText(String.valueOf(score));
     }
 
     /**
-     * This method is called when the plusTwoPoints button is clicked.
+     * Displays Red card score for Team A.
      */
-    public void plusTwoPointsTeamA(View view) {
-        scoreTeamA = scoreTeamA + 2;
-        displayForTeamA(scoreTeamA);
+    public void displayRedCardTeamA(int score) {
+        TextView scoreView = (TextView) findViewById(R.id.team_a_red_card_score);
+        scoreView.setText(String.valueOf(score));
     }
 
     /**
-     * This method is called when the freeThrow button is clicked.
+     * Displays goal score for Team B.
      */
-    public void plusOnePointTeamA(View view) {
-        scoreTeamA = scoreTeamA + 1;
-        displayForTeamA(scoreTeamA);
-    }
-
-    /**
-     * Displays the given score for Team B.
-     */
-    public void displayForTeamB(int score) {
+    public void displayGoalForTeamB(int score) {
         TextView scoreView = (TextView) findViewById(R.id.team_b_score);
         scoreView.setText(String.valueOf(score));
     }
 
     /**
-     * This method is called when the plusThreePoints button is clicked.
+     * Displays yellow card score for Team B.
      */
-    public void plusThreePointsTeamB(View view) {
-        scoreTeamB = scoreTeamB + 3;
-        displayForTeamB(scoreTeamB);
+    public void displayYellowCardTeamB(int score) {
+        TextView scoreView = (TextView) findViewById(R.id.team_b_yellow_card_score);
+        scoreView.setText(String.valueOf(score));
     }
 
     /**
-     * This method is called when the plusTwoPoints button is clicked.
+     * Displays Red card score for Team B.
      */
-    public void plusTwoPointsTeamB(View view) {
-        scoreTeamB = scoreTeamB + 2;
-        displayForTeamB(scoreTeamB);
+    public void displayRedCardTeamB(int score) {
+        TextView scoreView = (TextView) findViewById(R.id.team_b_red_card_score);
+        scoreView.setText(String.valueOf(score));
     }
 
     /**
-     * This method is called when the freeThrow button is clicked.
+     * This method is called when the goal button is clicked for Team A.
      */
-    public void plusOnePointTeamB(View view) {
-        scoreTeamB = scoreTeamB + 1;
-        displayForTeamB(scoreTeamB);
+    public void plusOneGoalTeamA(View view) {
+        goalTeamA = goalTeamA + 1;
+        displayGoalForTeamA(goalTeamA);
     }
+
+    /**
+     * This method is called when the yellow card button is clicked for Team A.
+     */
+    public void plusYellowCardTeamA(View view) {
+        yellowCardTeamA = yellowCardTeamA + 1;
+        displayYellowCardTeamA(yellowCardTeamA);
+    }
+
+    /**
+     * This method is called when the red card button is clicked for Team A.
+     */
+    public void plusOneRedCardTeamA(View view) {
+        redCardTeamA = redCardTeamA + 1;
+        displayRedCardTeamA(redCardTeamA);
+    }
+
+    /**
+     * This method is called when the goal button is clicked for Team B.
+     */
+    public void plusOneGoalTeamB(View view) {
+        goalTeamB = goalTeamB + 1;
+        displayGoalForTeamB(goalTeamB);
+    }
+
+    /**
+     * This method is called when the yellow card button is clicked for Team B.
+     */
+    public void plusYellowCardTeamB(View view) {
+        yellowCardTeamB = yellowCardTeamB + 1;
+        displayYellowCardTeamB(yellowCardTeamB);
+    }
+
+    /**
+     * This method is called when the red card button is clicked for Team B.
+     */
+    public void plusOneRedCardTeamB(View view) {
+        redCardTeamB = redCardTeamB + 1;
+        displayRedCardTeamB(redCardTeamB);
+    }
+
 
     /**
      * This method is called when the Reset button is clicked.
      */
     public void resetAllScores(View view) {
-        scoreTeamA = 0;
-        scoreTeamB = 0;
-        displayForTeamA(scoreTeamA);
-        displayForTeamB(scoreTeamB);
+        int goalTeamA = 0;
+        int yellowCardTeamA = 0;
+        int redCardTeamA = 0;
+        int yellowCardTeamB = 0;
+        int redCardTeamB = 0;
+        int goalTeamB = 0;
+        displayGoalForTeamA(goalTeamA);
+        displayYellowCardTeamA(yellowCardTeamA);
+        displayRedCardTeamA(redCardTeamA);
+        displayGoalForTeamB(goalTeamB);
+        displayYellowCardTeamB(yellowCardTeamB);
+        displayRedCardTeamB(redCardTeamB);
     }
 }
