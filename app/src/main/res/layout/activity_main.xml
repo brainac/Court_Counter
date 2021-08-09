@@ -51,7 +51,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/team_a_score"
+                android:id="@+id/team_a_goal_score"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -125,7 +125,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/button_spacing"
                 android:layout_weight="1"
-                android:onClick="plusOneGoalTeamA"
                 android:text="@string/button1" />
 
             <Button
@@ -134,7 +133,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/button_spacing"
                 android:layout_weight="1"
-                android:onClick="plusOneRedCardTeamA"
                 android:text="@string/button2" />
 
             <Button
@@ -142,7 +140,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="plusYellowCardTeamA"
                 android:text="@string/button3" />
 
         </LinearLayout>
@@ -180,7 +177,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/team_b_score"
+                android:id="@+id/team_b_goal_score"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -253,7 +250,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/button_spacing"
                 android:layout_weight="1"
-                android:onClick="plusOneGoalTeamB"
                 android:text="@string/button1" />
 
             <Button
@@ -262,7 +258,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/button_spacing"
                 android:layout_weight="1"
-                android:onClick="plusOneRedCardTeamB"
                 android:text="@string/button2" />
 
             <Button
@@ -270,7 +265,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="plusYellowCardTeamB"
                 android:text="@string/button3" />
 
         </LinearLayout>

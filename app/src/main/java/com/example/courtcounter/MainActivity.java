@@ -1,139 +1,81 @@
 package com.example.courtcounter;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
 
-    int goalTeamA = 0;
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    int goalTeamA = 50;
     int yellowCardTeamA = 0;
     int redCardTeamA = 0;
     int yellowCardTeamB = 0;
     int redCardTeamB = 0;
     int goalTeamB = 0;
 
+    private TextView teamAGoalTextView;
+    private TextView teamARedCardTextView;
+    private TextView teamAYellowCardTextView;
+    private TextView teamBGoalTextView;
+    private TextView teamBRedCardTextView;
+    private TextView teamBYellowCardTextView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //displayForTeamA(5);
+
+        teamAGoalTextView = findViewById(R.id.team_a_goal_score);
+        teamARedCardTextView = findViewById(R.id.team_a_red_card_score);
+        teamAYellowCardTextView = findViewById(R.id.team_a_yellow_card_score);
+        teamBGoalTextView = findViewById(R.id.team_b_goal_score);
+        teamBRedCardTextView = findViewById(R.id.team_b_red_card_score);
+        teamBYellowCardTextView = findViewById(R.id.team_b_yellow_card_score);
+
+
+        Button goalButtonTeamA = findViewById(R.id.team_a_button1);
+        Button redCardButtonTeamA = findViewById(R.id.team_a_button2);
+        Button yellowCardButtonTeamA = findViewById(R.id.team_a_button3);
+        Button goalButtonTeamB = findViewById(R.id.team_b_button1);
+        Button redCardButtonTeamB = findViewById(R.id.team_b_button2);
+        Button yellowCardButtonTeamB = findViewById(R.id.team_b_button3);
+        Button resetButton = findViewById(R.id.reset_button);
+
+        goalButtonTeamA.setOnClickListener(this);
+        redCardButtonTeamA.setOnClickListener(this);
+        yellowCardButtonTeamA.setOnClickListener(this);
+        goalButtonTeamB.setOnClickListener(this);
+        redCardButtonTeamB.setOnClickListener(this);
+        yellowCardButtonTeamB.setOnClickListener(this);
+        resetButton.setOnClickListener(this);
+
+
     }
 
-    /**
-     * Displays goal score for Team A.
-     */
-    public void displayGoalForTeamA(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.team_a_score);
-        scoreView.setText(String.valueOf(score));
-    }
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.team_a_button1:
+                teamAGoalTextView();
+                break;
+            case R.id.team_a_button2:
+                break;
+            case R.id.team_a_button3:
+                break;
+            case R.id.team_b_button1:
+                break;
+            case R.id.team_b_button2:
+                break;
+            case R.id.team_b_button3:
+                break;
+            case R.id.reset_button:
+                break;
+        }
 
-    /**
-     * Displays yellow card score for Team A.
-     */
-    public void displayYellowCardTeamA(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.team_a_yellow_card_score);
-        scoreView.setText(String.valueOf(score));
-    }
-
-    /**
-     * Displays Red card score for Team A.
-     */
-    public void displayRedCardTeamA(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.team_a_red_card_score);
-        scoreView.setText(String.valueOf(score));
-    }
-
-    /**
-     * Displays goal score for Team B.
-     */
-    public void displayGoalForTeamB(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.team_b_score);
-        scoreView.setText(String.valueOf(score));
-    }
-
-    /**
-     * Displays yellow card score for Team B.
-     */
-    public void displayYellowCardTeamB(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.team_b_yellow_card_score);
-        scoreView.setText(String.valueOf(score));
-    }
-
-    /**
-     * Displays Red card score for Team B.
-     */
-    public void displayRedCardTeamB(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.team_b_red_card_score);
-        scoreView.setText(String.valueOf(score));
-    }
-
-    /**
-     * This method is called when the goal button is clicked for Team A.
-     */
-    public void plusOneGoalTeamA(View view) {
-        goalTeamA = goalTeamA + 1;
-        displayGoalForTeamA(goalTeamA);
-    }
-
-    /**
-     * This method is called when the yellow card button is clicked for Team A.
-     */
-    public void plusYellowCardTeamA(View view) {
-        yellowCardTeamA = yellowCardTeamA + 1;
-        displayYellowCardTeamA(yellowCardTeamA);
-    }
-
-    /**
-     * This method is called when the red card button is clicked for Team A.
-     */
-    public void plusOneRedCardTeamA(View view) {
-        redCardTeamA = redCardTeamA + 1;
-        displayRedCardTeamA(redCardTeamA);
-    }
-
-    /**
-     * This method is called when the goal button is clicked for Team B.
-     */
-    public void plusOneGoalTeamB(View view) {
-        goalTeamB = goalTeamB + 1;
-        displayGoalForTeamB(goalTeamB);
-    }
-
-    /**
-     * This method is called when the yellow card button is clicked for Team B.
-     */
-    public void plusYellowCardTeamB(View view) {
-        yellowCardTeamB = yellowCardTeamB + 1;
-        displayYellowCardTeamB(yellowCardTeamB);
-    }
-
-    /**
-     * This method is called when the red card button is clicked for Team B.
-     */
-    public void plusOneRedCardTeamB(View view) {
-        redCardTeamB = redCardTeamB + 1;
-        displayRedCardTeamB(redCardTeamB);
-    }
-
-
-    /**
-     * This method is called when the Reset button is clicked.
-     */
-    public void resetAllScores(View view) {
-        goalTeamA = 0;
-        yellowCardTeamA = 0;
-        redCardTeamA = 0;
-        yellowCardTeamB = 0;
-        redCardTeamB = 0;
-        goalTeamB = 0;
-        displayGoalForTeamA(goalTeamA);
-        displayYellowCardTeamA(yellowCardTeamA);
-        displayRedCardTeamA(redCardTeamA);
-        displayGoalForTeamB(goalTeamB);
-        displayYellowCardTeamB(yellowCardTeamB);
-        displayRedCardTeamB(redCardTeamB);
     }
 }
+
