@@ -123,12 +123,12 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the Reset button is clicked.
      */
     public void resetAllScores(View view) {
-        int goalTeamA = 0;
-        int yellowCardTeamA = 0;
-        int redCardTeamA = 0;
-        int yellowCardTeamB = 0;
-        int redCardTeamB = 0;
-        int goalTeamB = 0;
+        goalTeamA = 0;
+        yellowCardTeamA = 0;
+        redCardTeamA = 0;
+        yellowCardTeamB = 0;
+        redCardTeamB = 0;
+        goalTeamB = 0;
         displayGoalForTeamA(goalTeamA);
         displayYellowCardTeamA(yellowCardTeamA);
         displayRedCardTeamA(redCardTeamA);

@@ -7,6 +7,7 @@
     android:background="@color/cardview_shadow_start_color">
 
     <LinearLayout
+        android:id="@+id/teams_title_row"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -28,10 +29,11 @@
         android:orientation="horizontal">
 
         <LinearLayout
+            android:id="@+id/team_a_column"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
+            android:layout_marginStart="@dimen/team_column_margin"
+            android:layout_marginEnd="@dimen/team_column_margin"
             android:layout_weight="1"
             android:orientation="vertical"
             tools:context=".MainActivity">
@@ -42,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:padding="14dp"
+                android:padding="@dimen/team_title_padding"
                 android:text="@string/team_a"
                 android:textColor="@color/text_color"
                 android:textSize="@dimen/team_title_text_size"
@@ -54,18 +56,20 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:paddingTop="16dp"
-                android:paddingBottom="16dp"
+                android:paddingTop="@dimen/goal_score_padding"
+                android:paddingBottom="@dimen/goal_score_padding"
                 android:text="@string/score"
-                android:textSize="100sp" />
+                android:textSize="@dimen/goal_score_text_size" />
 
             <LinearLayout
-                android:id="@+id/team_a_foul_layout"
+                android:id="@+id/team_a_penalty_column"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_marginBottom="@dimen/penalty_column_margin">
 
                 <LinearLayout
+                    android:id="@+id/team_a_penalty_score_row"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
@@ -77,7 +81,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:text="@string/foul"
-                        android:textSize="18sp" />
+                        android:textSize="@dimen/penalty_score_text_size" />
 
                     <TextView
                         android:id="@+id/team_a_red_card_score"
@@ -86,14 +90,14 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:text="@string/foul"
-                        android:textSize="18sp" />
+                        android:textSize="@dimen/penalty_score_text_size" />
 
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/team_a_penalty_icon_row"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
                     android:orientation="horizontal">
 
 
@@ -119,7 +123,7 @@
                 android:id="@+id/team_a_button1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="@dimen/button_spacing"
                 android:layout_weight="1"
                 android:onClick="plusOneGoalTeamA"
                 android:text="@string/button1" />
@@ -128,7 +132,7 @@
                 android:id="@+id/team_a_button2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="@dimen/button_spacing"
                 android:layout_weight="1"
                 android:onClick="plusOneRedCardTeamA"
                 android:text="@string/button2" />
@@ -144,18 +148,20 @@
         </LinearLayout>
 
         <View
+            android:id="@+id/team_divider_line"
             android:layout_width="1dp"
             android:layout_height="match_parent"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="@dimen/team_divider_line_margin"
             android:background="@color/cardview_dark_background">
 
         </View>
 
         <LinearLayout
+            android:id="@+id/team_b_column"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
+            android:layout_marginStart="@dimen/team_column_margin"
+            android:layout_marginEnd="@dimen/team_column_margin"
             android:layout_weight="1"
             android:orientation="vertical"
             tools:context=".MainActivity">
@@ -167,7 +173,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:padding="14dp"
+                android:padding="@dimen/team_title_padding"
                 android:text="@string/team_b"
                 android:textColor="@color/text_color"
                 android:textSize="@dimen/team_title_text_size"
@@ -179,19 +185,20 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:paddingTop="16dp"
-                android:paddingBottom="16dp"
+                android:paddingTop="@dimen/goal_score_padding"
+                android:paddingBottom="@dimen/goal_score_padding"
                 android:text="@string/score"
-                android:textSize="100sp" />
+                android:textSize="@dimen/goal_score_text_size" />
 
             <LinearLayout
-                android:id="@+id/team_b_foul_layout"
+                android:id="@+id/team_b_penalty_column"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="@dimen/penalty_column_margin"
                 android:orientation="vertical">
 
                 <LinearLayout
+                    android:id="@+id/team_b_penalty_score_row"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
@@ -203,7 +210,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:text="@string/foul"
-                        android:textSize="18sp" />
+                        android:textSize="@dimen/penalty_score_text_size" />
 
                     <TextView
                         android:id="@+id/team_b_red_card_score"
@@ -212,11 +219,12 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:text="@string/foul"
-                        android:textSize="18sp" />
+                        android:textSize="@dimen/penalty_score_text_size" />
 
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/team_b_penalty_icon_row"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
@@ -243,7 +251,7 @@
                 android:id="@+id/team_b_button1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="@dimen/button_spacing"
                 android:layout_weight="1"
                 android:onClick="plusOneGoalTeamB"
                 android:text="@string/button1" />
@@ -252,7 +260,7 @@
                 android:id="@+id/team_b_button2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="@dimen/button_spacing"
                 android:layout_weight="1"
                 android:onClick="plusOneRedCardTeamB"
                 android:text="@string/button2" />
@@ -272,12 +280,12 @@
 
 
     <Button
-        android:id="@+id/reset_button3"
+        android:id="@+id/reset_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="@dimen/reset_button_margin"
         android:onClick="resetAllScores"
         android:text="@string/reset" />
 

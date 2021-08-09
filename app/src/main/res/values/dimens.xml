@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="button_spacing">16sp</dimen>
+    <dimen name="goal_score_text_size">100sp</dimen>
+    <dimen name="goal_score_padding">16dp</dimen>
+    <dimen name="penalty_column_margin">16dp</dimen>
+    <dimen name="penalty_score_text_size">18sp</dimen>
+    <dimen name="reset_button_margin">32dp</dimen>
+    <dimen name="team_column_margin">24dp</dimen>
+    <dimen name="team_divider_line_margin">100dp</dimen>
     <dimen name="team_title_text_size">18sp</dimen>
+    <dimen name="team_title_padding">14dp</dimen>
 </resources>
